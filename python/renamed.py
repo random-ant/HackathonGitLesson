@@ -6,20 +6,10 @@ MIN_NUM = 1
 MAX_NUM = 50
 numbers = []
 
-
-def ADDED_FUNCTION():
-    global MIN_NUM
-    MIN_NUM = 30
-    print("ssssssssss")
-    print("d")
-    print("a")
-
-
 def generate_numbers():
     global numbers
     numbers = [random.randint(MIN_NUM, MAX_NUM) for _ in range(NUM_COUNT)]
     print("\nGenerated numbers:", numbers)
-
 
 def show_stats():
     if not numbers:
@@ -33,14 +23,12 @@ def show_stats():
     print("Even:", [n for n in numbers if n % 2 == 0])
     print("Odd:", [n for n in numbers if n % 2 != 0])
 
-
 def sort_numbers():
     if not numbers:
         print("\nNo numbers yet! Generate first.")
         return
     print("\nSorted ascending:", sorted(numbers))
     print("Sorted descending:", sorted(numbers, reverse=True))
-
 
 def find_number():
     if not numbers:
@@ -49,7 +37,6 @@ def find_number():
     n = int(input("Enter a number to search: "))
     print(f"{n} is in the list!" if n in numbers else f"{n} not found.")
 
-
 def save_numbers():
     if not numbers:
         print("\nNo numbers yet! Generate first.")
@@ -57,7 +44,6 @@ def save_numbers():
     with open("numbers.txt", "w") as f:
         f.write("\n".join(map(str, sorted(numbers))))
     print("\nNumbers saved to numbers.txt")
-
 
 def menu():
     while True:
@@ -70,22 +56,16 @@ def menu():
         print("6. Quit")
         choice = input("Choose an option: ")
 
-        if choice == "1":
-            generate_numbers()
-        elif choice == "2":
-            show_stats()
-        elif choice == "3":
-            sort_numbers()
-        elif choice == "4":
-            find_number()
-        elif choice == "5":
-            save_numbers()
+        if choice == "1": generate_numbers()
+        elif choice == "2": show_stats()
+        elif choice == "3": sort_numbers()
+        elif choice == "4": find_number()
+        elif choice == "5": save_numbers()
         elif choice == "6":
             print("\nGoodbye!")
             break
         else:
             print("Invalid option. Try again.")
-
 
 if __name__ == "__main__":
     menu()

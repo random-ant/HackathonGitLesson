@@ -13,6 +13,7 @@ def pig_latin(string):
 
 print(pig_latin("Banana"))
 print(pig_latin("example"))
+print(pig_latin("hello hello"))
 
 def palindrome(string):
 	num = len(string) - 1
@@ -30,3 +31,4 @@ def palindrome(string):
 
 print(palindrome("racecar"))
 print(palindrome("poop"))
+print(pig_latin("panama"))
